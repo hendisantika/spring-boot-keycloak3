@@ -1,5 +1,6 @@
 package com.hendisantika.service;
 
+import com.hendisantika.domain.RandomCity;
 import com.hendisantika.domain.User;
 import com.hendisantika.repository.RandomCityRepository;
 import com.hendisantika.repository.UserRepository;
@@ -33,5 +34,10 @@ public class GenericServiceImpl implements GenericService {
     @Override
     public List<User> findAllUsers() {
         return (List<User>) userRepository.findAll();
+    }
+
+    @Override
+    public List<RandomCity> findAllRandomCities() {
+        return (List<RandomCity>) randomCityRepository.findAll();
     }
 }
