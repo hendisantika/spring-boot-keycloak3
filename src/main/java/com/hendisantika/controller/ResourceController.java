@@ -1,9 +1,13 @@
 package com.hendisantika.controller;
 
+import com.hendisantika.domain.RandomCity;
 import com.hendisantika.service.GenericService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
@@ -20,4 +24,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class ResourceController {
     private GenericService userService;
+
+    @RequestMapping(value = "/cities")
+    @PreAuthorize("hasAuthority('ADMIN_USER') or hasAuthority('STANDARD_USER')")
+    public List<RandomCity> getUser() {
+        return userService.findAllRandomCities();
+    }
 }
