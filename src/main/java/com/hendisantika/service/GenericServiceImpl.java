@@ -1,5 +1,6 @@
 package com.hendisantika.service;
 
+import com.hendisantika.domain.User;
 import com.hendisantika.repository.RandomCityRepository;
 import com.hendisantika.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
@@ -21,4 +22,9 @@ public class GenericServiceImpl implements GenericService {
     private final UserRepository userRepository;
 
     private final RandomCityRepository randomCityRepository;
+
+    @Override
+    public User findByUsername(String username) {
+        return userRepository.findByUsername(username);
+    }
 }
