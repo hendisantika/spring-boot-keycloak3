@@ -6,6 +6,8 @@ import com.hendisantika.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * Created by IntelliJ IDEA.
  * Project : spring-boot-keycloak3
@@ -26,5 +28,10 @@ public class GenericServiceImpl implements GenericService {
     @Override
     public User findByUsername(String username) {
         return userRepository.findByUsername(username);
+    }
+
+    @Override
+    public List<User> findAllUsers() {
+        return (List<User>) userRepository.findAll();
     }
 }
