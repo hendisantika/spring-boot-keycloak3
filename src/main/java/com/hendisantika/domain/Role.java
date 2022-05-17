@@ -21,7 +21,7 @@ import javax.persistence.Table;
  * To change this template use File | Settings | File Templates.
  */
 @Entity
-@Table(name = "app_role")
+@Table(name = "t_role")
 @Getter
 @Setter
 public class Role {

@@ -21,7 +21,7 @@ import javax.persistence.Table;
  * To change this template use File | Settings | File Templates.
  */
 @Entity
-@Table(name = "random_city")
+@Table(name = "t_random_city")
 @Getter
 @Setter
 public class RandomCity {
